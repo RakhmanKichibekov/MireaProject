@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".ui.gallery.GalleryFragment">
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="60sp"
+            android:layout_marginTop="7sp"
+            android:text="Выберите автомобиль:"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line1"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="200sp"
+            android:layout_height="120sp"
+            android:layout_marginHorizontal="5sp"
+            android:layout_marginStart="10sp"
+            app:srcCompat="@drawable/merc1" />
+
+        <ImageView
+            android:layout_width="200sp"
+            android:layout_height="120sp"
+            app:srcCompat="@drawable/merc2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line2"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Машина слева"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:layout_marginStart="5sp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Зимний пакет"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/line4"
+        android:layout_width="wrap_content"
+        android:layout_height="210sp"
+        android:layout_below="@id/line3"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:text="Вот уже более 60 лет Mercedes-Benz SL roadster является одним из самых популярных и востребованных кабриолетов на дорогах, признанным символом успеха, престижа и спортивной элегантности. Новый Mercedes-Benz SL roadster 2017 года продолжает воплощать в себе эти качества, являясь непревзойденным автомобилем с верхним расположением двигателя. Благодаря новейшим достижениям в области технологий помощи водителю, современный SL является не только идеальным выбором для поездок с открытым верхом, но и высокопроизводительные версии Mercedes-AMG обеспечивают ускорение и управляемость, сравнимые с серьезными спортивными автомобилями."
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/line5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line4"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Машина справа"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:layout_marginStart="5sp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Зимний пакет"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/line6"
+        android:layout_width="wrap_content"
+        android:layout_height="210sp"
+        android:layout_below="@id/line5"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:text="Привыкайте: теперь вседорожник Mercedes-Benz ML зовется GLE, а его спортивная AMG-версия — Mercedes-AMG GLE 63 (S). Главное, конечно, что смена наименований самой модели и ее модификаций приурочена к совсем не поверхностному обновлению. Если вкратце, то GLE, равно как и его «купейный» собрат GLE Coupe, примерил стилистику S-класса, а также получил новые силовые агрегаты и оборудование. Премьера популярного семейства премиум-«проходимцев» состоится 1 апреля на мотор-шоу в Нью-Йорке."
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line6">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:backgroundTint="@color/purple_700"
+            android:text="Купить выбранные авто"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
