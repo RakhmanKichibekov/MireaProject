@@ -1,191 +1,821 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    android:background="@color/white"
     tools:context=".ui.gallery.GalleryFragment">
 
     <LinearLayout
-        android:id="@+id/line1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:id="@+id/zagolovok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
         <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="60sp"
-            android:layout_marginTop="7sp"
-            android:text="Выберите автомобиль:"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/line2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line1"
-        android:layout_marginTop="10sp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="200sp"
-            android:layout_height="120sp"
-            android:layout_marginHorizontal="5sp"
-            android:layout_marginStart="10sp"
-            app:srcCompat="@drawable/merc1" />
-
-        <ImageView
-            android:layout_width="200sp"
-            android:layout_height="120sp"
-            app:srcCompat="@drawable/merc2" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/line3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line2"
-        android:layout_marginTop="10sp"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/white" />
+            android:layout_marginHorizontal="40sp"
+            android:text="Мировые автобренды"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Машина слева"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="Большинство из нас — покупателей автомобилей — и вовсе не задумываются, в чей карман попадают в конечном итоге деньги, когда мы относим их к дилеру какой-то определенной марки. В конце концов, какая разница, кому они достанутся, ведь вы-то их уже лишились!
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5sp"
-            android:layout_marginStart="5sp">
+Но есть и другая сторона этого вопроса. Всеобщая глобализация, поглощение относительно небольших компаний крупными «акулами», тотальная тяга к объединениям, альянсам и прочим союзам так или иначе лишает нас той широты выбора, которая была, например, еще не так давно — в начале 90-х годов (не говоря уже о более ранних временах). Автомобили становятся похожими друг на друга, используют одинаковые платформы для разных брендов с целью максимального удешевления производства и более прагматичного распределения издержек.
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+Недавно покинувший нас великий американский менеджер автоиндустрии Ли Якокка когда-то говорил, что к началу XXI века на мировом автомобильном рынке останется лишь несколько действительно крупных игроков — корпораций и альянсов, которым будет принадлежать подавляющее большинство автомобильных брендов. Он оказался абсолютно прав. Именно на рубеже веков и чуть позже началась самая активная волна объединений, а также закрытий целого ряда компаний. Где вы теперь — Saab, Maybach, Pontiac, Mercury, легковые Isuzu, Hummer, Lancia и многие другие? Навсегда исчезли с карты мирового автопрома. Ну а кто же все-таки остался? Кто эти самые «крупные игроки»?
 
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Зимний пакет"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-
-        </androidx.core.widget.NestedScrollView>
-
-    </LinearLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/line4"
-        android:layout_width="wrap_content"
-        android:layout_height="210sp"
-        android:layout_below="@id/line3"
-        android:layout_marginTop="5sp">
-
+Проанализировав статистику за 2018 год, мы подсчитали, что 90% от всего годового объема продаж в 86 млн автомобилей распределили между собой всего… 12 компаний! Более половины всех проданных автомобилей — доля пяти крупнейших альянсов, которые находятся в топе этого списка — VAG, Toyota, Renault–Nissan–Mitsubishi, General Motors и Hyundai–Kia. Ниже вы найдете более подробную информацию об этих фирмах-гигантах."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <!--BMW-->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10sp"
-            android:layout_marginEnd="10sp"
-            android:text="Вот уже более 60 лет Mercedes-Benz SL roadster является одним из самых популярных и востребованных кабриолетов на дорогах, признанным символом успеха, престижа и спортивной элегантности. Новый Mercedes-Benz SL roadster 2017 года продолжает воплощать в себе эти качества, являясь непревзойденным автомобилем с верхним расположением двигателя. Благодаря новейшим достижениям в области технологий помощи водителю, современный SL является не только идеальным выбором для поездок с открытым верхом, но и высокопроизводительные версии Mercedes-AMG обеспечивают ускорение и управляемость, сравнимые с серьезными спортивными автомобилями."
-            android:textColor="@color/white"
-            android:textSize="25sp" />
-    </androidx.core.widget.NestedScrollView>
-
-    <LinearLayout
-        android:id="@+id/line5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line4"
-        android:layout_marginTop="10sp"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/white" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Машина справа"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
-
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5sp"
-            android:layout_marginStart="5sp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Зимний пакет"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-
-        </androidx.core.widget.NestedScrollView>
-
-    </LinearLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/line6"
-        android:layout_width="wrap_content"
-        android:layout_height="210sp"
-        android:layout_below="@id/line5"
-        android:layout_marginTop="5sp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10sp"
-            android:layout_marginEnd="10sp"
-            android:text="Привыкайте: теперь вседорожник Mercedes-Benz ML зовется GLE, а его спортивная AMG-версия — Mercedes-AMG GLE 63 (S). Главное, конечно, что смена наименований самой модели и ее модификаций приурочена к совсем не поверхностному обновлению. Если вкратце, то GLE, равно как и его «купейный» собрат GLE Coupe, примерил стилистику S-класса, а также получил новые силовые агрегаты и оборудование. Премьера популярного семейства премиум-«проходимцев» состоится 1 апреля на мотор-шоу в Нью-Йорке."
-            android:textColor="@color/white"
-            android:textSize="25sp" />
-    </androidx.core.widget.NestedScrollView>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line6">
-
-        <Button
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="12. BMW"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30sp"
-            android:backgroundTint="@color/purple_700"
-            android:text="Купить выбранные авто"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:src="@drawable/bmw1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="Страна — Германия
+Автомобильные марки — BMW, Mini, Rolls-Royce
+Количество проданных автомобилей в 2018 году — 2,49 млн
+Доля в мировых продажах — около 2,9%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/bmw2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+
+                android:src="@drawable/bmw3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bmw4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="Группа компаний BMW Group AG (Bayerische Motoren Werke AG) производит автомобили, мотоциклы и двигатели для них. Штаб-квартира находится в Мюнхене (Германия). С 1998 года английская компания Rolls-Royce Motor Ltd является структурным подразделением немецкой компании BMW AG. Немцы тогда выкупили Rolls-Royce за 430 млн евро. В 2000 году из-за регулярных убытков BMW продала подразделение Land Rover американской компании Ford (та в свою очередь продала LR индийской Tata в 2008 году), а производственные площади Mini перевел в отдельное, вновь образованное дочернее общество, которое и производит до сих пор возрожденные MINI. Сборочные производства BMW есть в Германии, России, США, ЮАР, Мексике, Венгрии, Египте, Индии и Китае."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <!--        Daimler-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="11. Daimler"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/daimler1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — Германия
+Автомобильные марки — Mercedes-Benz, smart
+Количество проданных автомобилей в 2018 году — 2,74 млн
+Доля в мировых продажах — около 3,2%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/daimler2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/daimler3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/daimler4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="Штаб-квартира транснационального автомобильного концерна Daimler-Benz AG находится в Штутгарте. С 1998 до 2007 года на мировой автомобильной арене фигурировал альянс DaimlerChrysler AG, но в октябре 2007-го 80% акций Chrysler LLC было продано. После ликвидации в 2012 году возрожденного не так давно люксового бренда Maybach в портфеле Daimler осталось всего два бренда — премиальный Mercedes-Benz и городские «малыши» smart. В 2009 году было образовано СП Daimler и КАМАЗ (50/50). Производство легковых Mercedes-Benz налажено в Германии, Австрии, Египте, Венгрии, Индонезии, Малайзии, Мексике, России, Испании, ЮАР, Таиланде, США и Вьетнаме."
+            android:textColor="@color/black"
+
+            android:textSize="20sp" />
+
+        <!--        Suzuki-->
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="10. Suzuki"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/suzuki1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — Япония
+Автомобильные марки — Suzuki
+Количество проданных автомобилей в 2018 году — 3,21 млн
+Доля в мировых продажах — около 3,7%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/suzuki2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/suzuki3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/suzuki4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="Единственный в нашем обзоре независимый автопроизводитель, который вошел в эту дюжину по числу проданных автомобилей, — японская компания Suzuki со штаб квартирой в Хамаматсу. Она, кстати, третья по объемам продаж в Японии. Но основную «кассу» Suzuki делает за счет индийского рынка, где продает огромное количество своих автомобилей под маркой Maruti Suzuki. Производственные мощности компании расположены в Японии, но клоны японских моделей собирают и продают по всему миру. Например, SX4 в Европе — это Fiat Sedici, Alto — это Nissan Pixo, а Vitara — это Chevrolet Tracker в Америке, и список этот можно продолжать почти бесконечно."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+<!--        Groupe PSA-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="9. Groupe PSA"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/psa1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — Франция
+Автомобильные марки — Peugeot, Citroen, DS, Opel
+Количество проданных автомобилей в 2018 году — 4,13 млн
+Доля в мировых продажах — около 4,8%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/psa2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/psa3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/psa4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="Groupe PSA (которая ранее называлась PSA Peugeot–Citroen) — второй по величине автопроизводитель в Европе со штаб-квартирой во французском Рюэль-Мальмезоне. С конца прошлого века PSA сотрудничала со многими автопроизводителями: с BMW — по бензиновым моторам, с Fiat — по коммерческим фургонам, с Ford — по дизелям, с Mitsubishi — по электрокарам, с Renault — по моторам и коробкам передач, с Toyota — по производству машин класса «супермини». В 2017 году PSA купила у General Motors бренды Opel и Vauxhall, которые, кстати, в первый же 2018 год под крылом французов показали прибыль! Автомобили для России выпускают на заводе «ПСМА Рус» под Калугой. В Аргентине PSA действует (совместно с Fiat) через компанию Sevel S.p.A., в Китае имеет совместное предприятие с Dongfeng Motor Corporation и еще одно с Changan, в Чехии — вместе с Toyota и в Иране — с Iran Khodro."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+<!--        8. FCA-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="8. FCA"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/fca1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — Италия/США
+Автомобильные марки — Alfa Romeo, Chrysler, Dodge, Jeep, Maserati, Ferrari, Lancia, RAM
+Количество проданных автомобилей в 2018 году — 4,84 млн
+Доля в мировых продажах — около 5,6%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/fca2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/fca3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fca4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="На восьмом месте нашего списка — весьма любопытное итало-американское объединение Fiat Chrysler Automobiles N.V. Группа была образована в 2014 году путем слияния. Компания зарегистрирована в Нидерландах, а новая штаб-квартира находится в Лондоне. В Европе концерн действует через подразделение Fiat Italy S.p.A., а за Океаном — через FCA US (ранее Chrysler LLC). У компании FCA есть 162 завода и 87 научно-технических центров, представительства в 40 странах, автомобили продаются в 150 странах, а дилерская сеть только в США насчитывает около 2600 салонов. И тем не менее концерн выставлен на продажу. Ранее предлагалось слияние и General Motors, и Volkswagen. Сейчас ведутся переговоры с китайскими инвесторами, среди которых Great Wall, DFM, Geely и GAC."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+<!--        7. Honda Motor-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="7. Honda Motor"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/honda1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — Япония
+Автомобильные марки — Honda, Acura
+Количество проданных автомобилей в 2018 году — 5,27 млн
+Доля в мировых продажах — около 6,1%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/honda2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/honda3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/honda4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="Honda могла бы стать в нашем списке еще одним соло-производителем, если бы не люксовый суббренд Acura, который был зарегистрирован в 1986 году. В списке крупнейших публичных компаний мира Forbes Global 2000 в 2016 году компания Honda заняла 74-е место, в том числе 36-е по обороту, 132-е по чистой прибыли, 175-е по активам и 176-е по рыночной капитализации. Ну а в прошлом году японцы забрались на седьмую строчку мирового рейтинга по производству автомобилей и мотоциклов. Производственные мощности Honda есть в Японии, США, Канаде, Мексике, Британии, Китае, Турции, Таиланде, Индонезии, Малайзии, Вьетнаме, Аргентине и Бразилии."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <!--    6. Ford Motor-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="6. Ford Motor"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/ford1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — США
+Автомобильные марки — Ford, Lincoln
+Количество проданных автомобилей в 2018 году — 5,73 млн
+Доля в мировых продажах — около 6,7%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/ford2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/ford3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ford4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="Первая компания из Америки со штаб-квартирой, естественно, в Дирборне, что под Детройтом, и сразу на шестом месте в нашем рейтинге — это Ford Motor Company, которая, впрочем, в последние годы переживает далеко не лучшие времена. Падение за прошлый год рекордное — минус 11%. Да и уход из России всех легковых моделей вместе с закрытием завода во Всеволожске случился явно не просто так. Еще не так давно Ford имел свое влияние в таких брендах, как Land Rover, Mazda и Volvo, но нынче у американцев остался лишь один суббренд — Lincoln, который производит luxury-автомобили, в основном для США. Но география производства Ford по-прежнему очень широка — Северная и Южная Америка, Европа, Австралия и Новая Зеландия."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+<!--        5. Hyundai–Kia-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="5. Hyundai–Kia"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/hk1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — Южная Корея
+Автомобильные марки — Hyundai, Kia, Genesis
+Количество проданных автомобилей в 2018 году — 7,51 млн
+Доля в мировых продажах — около 8,7%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/hk2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/hk3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hk4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="На российском рынке концерн Hyundai–Kia — самый активный за последние годы. Сейчас корейцам принадлежит уже более 20% рынка у нас в стране. Но и во всем мире позиции их очень сильны — пятое место рейтинга продаж! История этого гиганта (именно объединенной компании) началась всего-то в 1998 году, когда Hyundai Motors поглотила старейшую корейскую компанию Kia. В 2015 году появился также люксовый суббренд Genesis. Штаб-квартира конгломерата находится в Сеуле, а заводы — в Южной Корее, России, Турции, Америке, Китае, Чехии, Индии и Бразилии."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+<!--        4. General Motors-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="4. General Motors"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/gm1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — США
+Автомобильные марки — Buick, Cadillac, Chevrolet, GMC
+Количество проданных автомобилей в 2018 году — 8,79 млн
+Доля в мировых продажах — около 10,2%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/gm2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/gm3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gm4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="Все еще ведущий американский производитель автомобилей и первый «монстр» нашего списка с долей рынка более 10%. Но по пути к этому, безусловно, почетному четвертому месту General Motors растерял огромное количество своих брендов: Opel, Saab, Hummer, Saturn, Pontiac, Oldsmobile, Plymouth, Holden… Сколько оригинальных автомобилей мы потеряли! В России GM теперь представлен только маркой Cadillac, Buick очень популярен в Китае, а львиная доля Chevrolet и GMC продается на внутреннем американском рынке. Штаб-квартира GM, конечно же, находится в Детройте, а производства есть абсолютно на всех континентах."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+<!--        3. Renault–Nissan–Mitsibishi-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="3. Renault–Nissan–Mitsibishi"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/rnm1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — Франция/Япония
+Автомобильные марки — Dacia, Datsun, Infiniti, Lada, Nissan, Mitsubishi, Renault, Samsung Motors
+Количество проданных автомобилей в 2018 году — 10,36 млн
+Доля в мировых продажах — около 12%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/rnm2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/rnm3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rnm4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="Самое крупное и «свежее» объединение за последние годы. В октябре 2016 года Mitsubishi Motors Corporation объявила о том, что Nissan Motor Co., Ltd. завершил сделку по покупке 34% акций MMC за 237 млрд японских иен и стал крупнейшим акционером компании «Митсу». В 2017 году альянс даже стал лидером по продажам первого полугодия, но в 2018-м занимает бронзовую ступень пьедестала с весьма увесистой долей в 12% рынка! У концерна есть производства во Франции, России, Японии, Индии и Бразилии. Контролирует деятельность альянса Renault–Nissan–Mitsubishi специальный новый орган — управляющий совет, в который вошли руководители всех трех компаний: Тьерри Боллоре (Renault), Хирото Саикава (Nissan) и Осаму Масуко (Mitsubishi). Возглавил новоиспеченную структуру Жан-Доминик Сенар, председатель совета директоров Renault."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+<!--        2. Toyota-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="2. Toyota"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/toy1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — Япония
+Автомобильные марки — Daihatsu, Hino, Lexus, Scion (закрыта в 2016 году), Toyota
+Количество проданных автомобилей в 2018 году — 10,52 млн
+Доля в мировых продажах — около 12,2%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/toy2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/toy3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/toy4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="В нашей стране широко известны только два автомобильных бренда, принадлежащих корпорации: Toyota и Lexus. Ну еще нам знакомы малотоннажные грузовички Hino. Напомним, что после того, как Тойота в 2005 году выкупила — кстати, все у того же GM! — часть акций Fuji Heavy Industries, она стала акционером Subaru (16,48 процентов). А вот марки Scion (закрыта в 2016 году) и Daihatsu нам почти неведомы, впрочем, и доля их в продажах корпорации совсем невелика: 8,1 млн машин из 10,5 млн было продано именно под брендом Toyota. Штаб-квартира компании находится в префектуре Айти, а производства есть по всему миру."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+<!--        1. VAG-->
+
+        <TextView
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="10sp"
+            android:text="1. VAG"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:src="@drawable/vag1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Страна — Германия
+Автомобильные марки — Audi, Bentley, Bugatti, Lamborghini, MAN, Porsche, SEAT, Scania, Skoda, Volkswagen
+Количество проданных автомобилей в 2018 году — 10,83 млн
+Доля в мировых продажах — около 12,6%"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40sp"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/vag2" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10sp"
+                android:src="@drawable/vag3" />
+
+            <ImageView
+                android:layout_width="120sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/vag4" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginTop="-40sp"
+            android:text="Внимание — гонг для победителя! Мировой чемпион по продажам автомобилей — немецкий концерн Volkswagen AG со штаб-квартирой в Вольфсбурге. Правда, тут стоит оговориться: в свою статистику VW включает также, в отличие от других концернов, полноразмерные грузовики Scania и Man. Именно благодаря такой «уловке» VAG и находится на первом месте. Без грузовиков его бы опередила Toyota. Активную скупку брендов VW начал еще в 80-х годах прошлого века. Первым стал в 1986 году испанский SEAT, а в 1991 году немцы купили чешскую Skoda. В 1998 году к портфелю добавились Bentley, Lamborghini (приобретена дочерней Audi) и Bugatti, а с 2009 года началась охота за Porsche, и к 2012 году VW стала материнской компанией. В 2009 году немцы выкупили контрольный пакет акций Scania, а в 2011 году — MAN. Также в 2011 году Audi приобрела мотоциклетную компанию Ducati Motor Holding S.p.A. В России производят автомобили марок Volkswagen и Skoda, а также грузовики MAN и Scania."
+            android:textColor="@color/black"
+            android:textSize="20sp" />
     </LinearLayout>
 
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

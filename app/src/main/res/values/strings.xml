@@ -10,4 +10,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="web_mirea">Web MIREA</string>
+    <string name="buy_a_car">Buy a car</string>
+    <string name="global_auto_brands">Global auto brands</string>
 </resources>

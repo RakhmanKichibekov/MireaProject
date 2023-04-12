@@ -7,14 +7,19 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@android:drawable/star_big_on"
-            android:title="Web MIREA" />
+            android:title="@string/web_mirea" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@android:drawable/ic_delete"
-            android:title="Buy a car" />
+            android:title="@string/global_auto_brands" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Worker" />
+        <item
+            android:id="@+id/nav_compas"
+            android:icon="@drawable/baseline_compass_calibration_24"
+            android:title="Compas" />
+
     </group>
 </menu>
