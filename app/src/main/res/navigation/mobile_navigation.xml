@@ -22,4 +22,22 @@
         android:name="ru.mirea.kichibekov.mireaproject_lesson3.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_compas"
+        android:name="ru.mirea.kichibekov.mireaproject_lesson3.ui.compas.CompasFragment"
+        android:label="Compas"
+        tools:layout="@layout/fragment_compas" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="ru.mirea.kichibekov.mireaproject_lesson3.ui.camera.CameraFragment"
+        android:label="Camera"
+        tools:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/nav_micro"
+        android:name="ru.mirea.kichibekov.mireaproject_lesson3.ui.microphone.MicrophoneFragment"
+        android:label="Microphone"
+        tools:layout="@layout/fragment_microphone" />
 </navigation>

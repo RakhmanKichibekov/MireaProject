@@ -13,4 +13,12 @@
     <string name="web_mirea">Web MIREA</string>
     <string name="buy_a_car">Buy a car</string>
     <string name="global_auto_brands">Global auto brands</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mirea_project">Mirea Project</string>
+    <string name="rakhman_kichibekov">Rakhman Kichibekov</string>
+    <string name="worker">Worker</string>
+    <string name="compas">Compas</string>
+    <string name="camera">Camera</string>
+    <string name="microphone">Microphone</string>
 </resources>

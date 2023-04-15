@@ -15,11 +15,21 @@
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Worker" />
+            android:title="@string/worker" />
         <item
             android:id="@+id/nav_compas"
             android:icon="@drawable/baseline_compass_calibration_24"
-            android:title="Compas" />
+            android:title="@string/compas" />
+
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/baseline_camera_alt_24"
+            android:title="@string/camera" />
+
+        <item
+            android:id="@+id/nav_micro"
+            android:icon="@drawable/baseline_mic_24"
+            android:title="@string/microphone" />
 
     </group>
 </menu>
