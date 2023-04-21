@@ -7,15 +7,128 @@
     android:background="@color/bg"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageViewPushButton"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bt1"
-        android:background="@color/bg"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="10sp"
+        android:text="Профиль"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ваше фото"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="300sp"
+        android:layout_height="300sp"
+        android:layout_margin="0dp"
+        android:layout_marginHorizontal="10sp"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/bg2"
+        android:elevation="10dp"
+        android:shadowColor="#000"
+        android:shadowDx="30"
+        android:shadowDy="50"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageViewPushButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/bg"
+            android:src="@drawable/bt1" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Возраст"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:layout_width="200sp"
+            android:inputType="number"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Имя"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:layout_width="200sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:layout_width="200sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

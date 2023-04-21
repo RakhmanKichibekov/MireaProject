@@ -1,7 +1,5 @@
 package ru.mirea.kichibekov.mireaproject_lesson3.ui.compas;
 
-import static android.content.Context.SENSOR_SERVICE;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -24,20 +22,9 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
-
-import java.util.Objects;
-
-import ru.mirea.kichibekov.mireaproject_lesson3.R;
 import ru.mirea.kichibekov.mireaproject_lesson3.databinding.FragmentCompasBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CompasFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class CompasFragment extends Fragment implements SensorEventListener {
 
     private FragmentCompasBinding binding;
@@ -55,9 +42,6 @@ public class CompasFragment extends Fragment implements SensorEventListener {
     private boolean isWork = false;
 
     private static final int REQUEST_CODE_PERMISSION = 100;
-
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -103,10 +87,10 @@ public class CompasFragment extends Fragment implements SensorEventListener {
     @SuppressLint("SetTextI18n")
     @Override
     public void onSensorChanged(SensorEvent event) {
-        float degree = Math.round(event.values[0]);
+        float degree = event.values[0]*100;
 
         tvDegree.setText(String.format("Degree from North: %s degrees",Float.toString(degree)));
-        Log.d(CompasFragment.class.getSimpleName(), String.format("Degree from North: %s degrees",Float.toString(degree)));
+        //Log.d(CompasFragment.class.getSimpleName(), String.format("Degree from North: %s degrees",Float.toString(degree)));
         RotateAnimation ra = new RotateAnimation(
                 currentDegree, -degree, Animation.RELATIVE_TO_SELF,
                 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
