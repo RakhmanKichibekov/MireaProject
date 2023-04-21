@@ -59,31 +59,6 @@ public class CompasFragment extends Fragment implements SensorEventListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private String mParam1;
-    private String mParam2;
-
-    public CompasFragment() {
-        // Required empty public constructor
-    }
-
-    public static CompasFragment newInstance(String param1, String param2) {
-        CompasFragment fragment = new CompasFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -92,7 +67,7 @@ public class CompasFragment extends Fragment implements SensorEventListener {
         mContext = inflater.getContext();
         sensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         init();
-        return inflater.inflate(R.layout.fragment_compas, container, false);
+        return binding.getRoot();
     }
 
     private void init() {
@@ -114,7 +89,8 @@ public class CompasFragment extends Fragment implements SensorEventListener {
     public void onResume() {
         super.onResume();
         sensorManager.registerListener(this,sensorManager
-                .getDefaultSensor(Sensor.TYPE_ORIENTATION),SensorManager.SENSOR_DELAY_GAME);
+                .getDefaultSensor(Sensor.TYPE_ORIENTATION),SensorManager.SENSOR_DELAY_UI);
+    //sensorManager.getOrientation()
     }
 
     @Override
@@ -123,21 +99,19 @@ public class CompasFragment extends Fragment implements SensorEventListener {
         sensorManager.unregisterListener(this);
     }
 
+
     @SuppressLint("SetTextI18n")
     @Override
     public void onSensorChanged(SensorEvent event) {
         float degree = Math.round(event.values[0]);
-        Toast toast = Toast.makeText(mContext.getApplicationContext(),
-                "Degree from North: " + Float.toString(degree) + " degrees", Toast.LENGTH_LONG);
-        //toast.show();
-        tvDegree.setText("Degree from North: " + Float.toString(degree) + " degrees");
-        System.out.println("Degree from North: " + Float.toString(degree) + " degrees");
+
+        tvDegree.setText(String.format("Degree from North: %s degrees",Float.toString(degree)));
+        Log.d(CompasFragment.class.getSimpleName(), String.format("Degree from North: %s degrees",Float.toString(degree)));
         RotateAnimation ra = new RotateAnimation(
                 currentDegree, -degree, Animation.RELATIVE_TO_SELF,
                 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 
         ra.setDuration(210);
-
         ra.setFillAfter(true);
 
         ivDinamic.startAnimation(ra);

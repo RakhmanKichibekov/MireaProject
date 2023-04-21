@@ -40,33 +40,6 @@ public class CameraFragment extends Fragment {
     private static final int REQUEST_CODE_PERMISSION = 100;
     private boolean isWork = false;
     private Uri imageUri;
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
-
-    public CameraFragment() {
-        // Required empty public constructor
-    }
-
-    public static CameraFragment newInstance(String param1, String param2) {
-        CameraFragment fragment = new CameraFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -92,7 +65,7 @@ public class CameraFragment extends Fragment {
             public void onActivityResult(ActivityResult result) {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent data = result.getData();
-                    binding.imageView.setImageURI(imageUri);
+                    binding.imageViewPushButton.setImageURI(imageUri);
                 }
             }
         };
@@ -100,12 +73,12 @@ public class CameraFragment extends Fragment {
                 new ActivityResultContracts.StartActivityForResult(),
                 callback);
         // Обработчик нажатия на компонент «imageView»
-        binding.imageView.setOnClickListener(new View.OnClickListener() {
+        binding.imageViewPushButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 // проверка на наличие разрешений для камеры
-                if (isWork) {
+//                if (isWork) {
                     try {
                         File photoFile = createImageFile();
                         // генерирование пути к файлу на основе authorities
@@ -116,11 +89,10 @@ public class CameraFragment extends Fragment {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }
             }
         });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_camera, container, false);
+        return binding.getRoot();
     }
 
     private File createImageFile() throws IOException {

@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.compas.CompasFragment"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".ui.compas.CompasFragment">
 
     <TextView
         android:id="@+id/tvDegree"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
         android:text="Text"
+        android:textColor="@color/white"
         android:textSize="28sp"
-        android:layout_marginHorizontal="150sp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:id="@+id/ivDynamic"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginHorizontal="40sp"
-        android:layout_marginTop="150sp"
-        android:src="@drawable/img_compass_dinamic" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/img_compass_dinamic"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvDegree"
+        app:layout_constraintTop_toTopOf="@+id/tvDegree" />
 
     <ImageView
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="150sp"
-        android:src="@drawable/img_compass_static"
-        android:layout_marginHorizontal="40sp"/>
-
-    <LinearLayout
+        android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="600sp"
-        android:layout_marginTop="490sp"
-        android:background="@color/black"/>
+        android:layout_height="match_parent"
+        android:src="@drawable/img_compass_static"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvDegree"
+        app:layout_constraintTop_toTopOf="@+id/tvDegree"
+        app:layout_constraintVertical_bias="1.0" />
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
