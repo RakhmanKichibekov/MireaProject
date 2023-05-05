@@ -40,4 +40,10 @@
         android:name="ru.mirea.kichibekov.mireaproject_lesson3.ui.microphone.MicrophoneFragment"
         android:label="Microphone"
         tools:layout="@layout/fragment_microphone" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="ru.mirea.kichibekov.mireaproject_lesson3.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_microphone" />
 </navigation>

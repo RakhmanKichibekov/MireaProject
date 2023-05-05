@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Начать запись. No 12, БСБО-03-20"
         android:textStyle="italic"
+        android:backgroundTint="@color/bg2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:text="Воспроизвести"
         android:textStyle="italic"
+        android:backgroundTint="@color/bg2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recordButton"
         tools:ignore="MissingConstraints" />

@@ -31,5 +31,10 @@
             android:icon="@drawable/baseline_mic_24"
             android:title="@string/microphone" />
 
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/baseline_emoji_people_24"
+            android:title="@string/profile" />
+
     </group>
 </menu>
