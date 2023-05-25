@@ -14,7 +14,7 @@
         <org.osmdroid.views.MapView
             android:id="@+id/mapView"
             android:layout_width="match_parent"
-            android:layout_height="570sp" />
+            android:layout_height="520sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
