@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="20sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textIp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ip: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textHost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hostname: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textRegion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Region: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Country: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textLoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loc: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textOrg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="org: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textPostal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Postal: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textTimeZone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TimeZone: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textReadMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ReadMe: "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+        <Button
+            android:id="@+id/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/cardview_dark_background"
+            android:text="Enter" />
+
+        <TextView
+            android:id="@+id/textTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature: "
+            android:textColor="@color/purple_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textWindSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WindSpeed: "
+            android:textColor="@color/purple_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textWindDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WindDirection: "
+            android:textColor="@color/purple_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textLatitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WindSpeed: "
+            android:textColor="@color/purple_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textlongitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WindDirection: "
+            android:textColor="@color/purple_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textElevation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elevation: "
+            android:textColor="@color/purple_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: "
+            android:textColor="@color/purple_700"
+            android:textSize="20sp" />
+
+
+        <Button
+            android:id="@+id/Button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/cardview_dark_background"
+            android:onClick="onClickWeather"
+            android:text="Weather" />
+    </LinearLayout>
+
+
+</RelativeLayout>

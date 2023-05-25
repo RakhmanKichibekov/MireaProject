@@ -61,9 +61,9 @@ public class Registration extends AppCompatActivity {
     // [END on_start_check_user]
     private void updateUI(FirebaseUser user) {
         if (user != null) {
-            binding.textView.setText(getString(R.string.emailpassword_status_fmt,
-                    user.getEmail(), user.isEmailVerified()));
-            binding.textViewUID.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+//            binding.textView.setText(getString(R.string.emailpassword_status_fmt,
+//                    user.getEmail(), user.isEmailVerified()));
+//            binding.textViewUID.setText(getString(R.string.firebase_status_fmt, user.getUid()));
 //            binding.emailPasswordButtons.setVisibility(View.GONE);
 //            binding.passEdit.setVisibility(View.GONE);
 //            binding.signedInButtons.setVisibility(View.GONE);

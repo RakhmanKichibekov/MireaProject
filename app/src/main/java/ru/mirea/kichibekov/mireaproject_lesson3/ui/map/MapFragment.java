@@ -36,8 +36,6 @@ public class MapFragment extends Fragment {
     private MapView mapView;
 
     private TextView textView;
-    boolean isWork;
-    private static final int REQUEST_CODE_PERMISSION = 100;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,

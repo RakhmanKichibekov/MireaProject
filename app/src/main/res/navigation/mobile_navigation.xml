@@ -50,6 +50,12 @@
     <fragment
         android:id="@+id/nav_map"
         android:name="ru.mirea.kichibekov.mireaproject_lesson3.ui.map.MapFragment"
-        android:label="Profile"
+        android:label="Map"
         tools:layout="@layout/fragment_microphone" />
+
+    <fragment
+        android:id="@+id/nav_weather"
+        android:name="ru.mirea.kichibekov.mireaproject_lesson3.ui.weather.WeatherFragment"
+        android:label="Weather"
+        tools:layout="@layout/fragment_weather" />
 </navigation>

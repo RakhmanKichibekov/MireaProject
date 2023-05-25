@@ -46,4 +46,5 @@ with Firebase.</string>
 tails.</string>
     <string name="verify">Verify</string>
     <string name="map">Map</string>
+    <string name="weather">Weather</string>
 </resources>
