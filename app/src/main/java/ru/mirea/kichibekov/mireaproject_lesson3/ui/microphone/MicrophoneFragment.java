@@ -26,7 +26,6 @@ import ru.mirea.kichibekov.mireaproject_lesson3.R;
 import ru.mirea.kichibekov.mireaproject_lesson3.databinding.FragmentMicrophoneBinding;
 
 public class MicrophoneFragment extends Fragment {
-
     private FragmentMicrophoneBinding binding;
     private final String TAG = MicrophoneFragment.class.getSimpleName();
     private static final int REQUEST_CODE_PERMISSION = 200;
