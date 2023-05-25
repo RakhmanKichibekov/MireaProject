@@ -47,4 +47,10 @@ tails.</string>
     <string name="verify">Verify</string>
     <string name="map">Map</string>
     <string name="weather">Weather</string>
+    <string name="profile2">Профиль</string>
+    <string name="age">Возраст</string>
+    <string name="Name">Имя</string>
+    <string name="lastname">Фамилия</string>
+    <string name="save">Сохранить</string>
+    <string name="load">Загрузить</string>
 </resources>
