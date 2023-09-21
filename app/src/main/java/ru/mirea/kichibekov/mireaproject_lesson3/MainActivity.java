@@ -1,6 +1,8 @@
 package ru.mirea.kichibekov.mireaproject_lesson3;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.view.Menu;
 
@@ -27,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+//        @SuppressLint("HardwareIds")
+//        String m_androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+//        System.out.println("Индивидуальный код "+m_androidId);
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override

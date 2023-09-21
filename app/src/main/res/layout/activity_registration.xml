@@ -38,9 +38,14 @@
             android:layout_marginHorizontal="20sp"
             android:text="password length at least 6 characters"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            />
 
         <TextView
+            android:id="@+id/textID"
+            android:layout_marginHorizontal="20sp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>

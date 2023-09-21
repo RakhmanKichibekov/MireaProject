@@ -1,7 +1,9 @@
 package ru.mirea.kichibekov.mireaproject_lesson3;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -32,6 +34,10 @@ public class Registration extends AppCompatActivity {
         setContentView(binding.getRoot());
 // [START initialize_auth] Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+        @SuppressLint("HardwareIds")
+        String m_androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        System.out.println("Индивидуальный код "+m_androidId);
+        binding.textID.setText(m_androidId);
         binding.signedInButtons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
