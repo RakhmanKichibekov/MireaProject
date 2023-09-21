@@ -81,7 +81,8 @@ public class WeatherFragment extends Fragment {
                 //Log.d(MainActivity.class.getSimpleName(), "Response: " + responseJson);
                 String ip = responseJson.getString("ip");
                 binding.textCity.setText("City: " + responseJson.getString("city"));
-                binding.textHost.setText("Hostname: " + responseJson.getString("hostname"));
+                Log.d("qwerty", "Response:" + responseJson);
+//                binding.textHost.setText("Hostname: " + responseJson.getString("hostname"));
                 binding.textRegion.setText("Region: " +responseJson.getString("region"));
                 binding.textIp.setText("ip: " + responseJson.getString("ip"));
                 binding.textCountry.setText("Country: " + responseJson.getString("country"));
