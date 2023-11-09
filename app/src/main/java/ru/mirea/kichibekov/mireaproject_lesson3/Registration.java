@@ -34,6 +34,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import org.bouncycastle.jcajce.provider.digest.GOST3411;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import ru.mirea.kichibekov.mireaproject_lesson3.databinding.ActivityRegistrationBinding;
 import ru.mirea.kichibekov.mireaproject_lesson3.ui.map.MapFragment;
@@ -63,7 +65,7 @@ public class Registration extends AppCompatActivity {
             public void onClick(View v) {
                 String email = String.valueOf(binding.emailPasswordFields.getText());
                 String password = String.valueOf(binding.passEdit.getText());
-                String hashPass = sha256(password);
+                String hashPass = gost341194(password);
                 signIn(email, hashPass, v);
             }
         });
@@ -72,7 +74,7 @@ public class Registration extends AppCompatActivity {
             public void onClick(View v) {
                 String email = String.valueOf(binding.emailPasswordFields.getText());
                 String password = String.valueOf(binding.passEdit.getText());
-                String hashPass = sha256(password);
+                String hashPass = gost341194(password);
                 createAccount(email, hashPass, v);
             }
         });
@@ -103,16 +105,17 @@ public class Registration extends AppCompatActivity {
 
         try {
             // Создаем объект MessageDigest с использованием ГОСТ 34.11-94
-            MessageDigest gost3411 = MessageDigest.getInstance("GOST3411", "BC");
+            //MessageDigest gost3411 =  MessageDigest.getInstance("GOST3411", BouncyCastleProvider.PROVIDER_NAME);
 
             // Преобразуем пароль в байты
             byte[] passwordBytes = password.getBytes(StandardCharsets.UTF_8);
 
             // Обновляем объект MessageDigest данными
-            gost3411.update(passwordBytes);
+            //gost3411.update(passwordBytes);
 
             // Вычисляем хэш
-            byte[] hash = gost3411.digest();
+            GOST3411.Digest md = new GOST3411.Digest();
+            byte[] hash = md.digest(passwordBytes);
 
             // Преобразуем хэш в строку для вывода
             StringBuilder hexString = new StringBuilder();
@@ -126,14 +129,6 @@ public class Registration extends AppCompatActivity {
             e.printStackTrace();
         }
         return "";
-    }
-
-    public static String bytesToHex(byte[] bytes) {
-        StringBuilder result = new StringBuilder();
-        for (byte b : bytes) {
-            result.append(String.format("%02x", b));
-        }
-        return result.toString();
     }
 
     @SuppressLint("SetTextI18n")
