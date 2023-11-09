@@ -26,7 +26,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.Security;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -58,7 +63,8 @@ public class Registration extends AppCompatActivity {
             public void onClick(View v) {
                 String email = String.valueOf(binding.emailPasswordFields.getText());
                 String password = String.valueOf(binding.passEdit.getText());
-                signIn(email, password, v);
+                String hashPass = sha256(password);
+                signIn(email, hashPass, v);
             }
         });
         binding.emailPasswordButtons.setOnClickListener(new View.OnClickListener() {
@@ -66,22 +72,80 @@ public class Registration extends AppCompatActivity {
             public void onClick(View v) {
                 String email = String.valueOf(binding.emailPasswordFields.getText());
                 String password = String.valueOf(binding.passEdit.getText());
-                createAccount(email, password, v);
+                String hashPass = sha256(password);
+                createAccount(email, hashPass, v);
             }
         });
 // [END initialize_auth]
     }
 
+    private String sha256(String input) {
+        try {
+            MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
+            byte[] passwordBytes = input.getBytes(StandardCharsets.UTF_8);
+            byte[] hash = sha256.digest(passwordBytes);
+
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                hexString.append(String.format("%02x", b));
+            }
+
+            System.out.println("SHA-256 хэш пароля: " + hexString.toString());
+            return  hexString.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    private String gost341194(String password) {
+        Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+
+        try {
+            // Создаем объект MessageDigest с использованием ГОСТ 34.11-94
+            MessageDigest gost3411 = MessageDigest.getInstance("GOST3411", "BC");
+
+            // Преобразуем пароль в байты
+            byte[] passwordBytes = password.getBytes(StandardCharsets.UTF_8);
+
+            // Обновляем объект MessageDigest данными
+            gost3411.update(passwordBytes);
+
+            // Вычисляем хэш
+            byte[] hash = gost3411.digest();
+
+            // Преобразуем хэш в строку для вывода
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                hexString.append(String.format("%02x", b));
+            }
+
+            System.out.println("Хэш пароля: " + hexString.toString());
+            return hexString.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public static String bytesToHex(byte[] bytes) {
+        StringBuilder result = new StringBuilder();
+        for (byte b : bytes) {
+            result.append(String.format("%02x", b));
+        }
+        return result.toString();
+    }
+
     @SuppressLint("SetTextI18n")
-    private void searchApps(){
+    private void searchApps() {
         PackageManager pm = getPackageManager();
         @SuppressLint("QueryPermissionsNeeded") List<ApplicationInfo> apps = pm.getInstalledApplications(0);
         List<ApplicationInfo> installedApps = new ArrayList<ApplicationInfo>();
         View externalLayout = LayoutInflater.from(this).inflate(R.layout.banner_layout, null, false);
         TextView textBanner = externalLayout.findViewById(R.id.bannerTextView);
-        for(ApplicationInfo app : apps) {
+        for (ApplicationInfo app : apps) {
             //checks for flags; if flagged, check if updated system app
-            if((app.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0) {
+            if ((app.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0) {
                 installedApps.add(app);
                 //it's a system app, not interested
             } else if ((app.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
@@ -102,14 +166,15 @@ public class Registration extends AppCompatActivity {
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
                 appNames);
-        for (String app: appNames) {
-            if (app.equals("AnyDesk")){
+        for (String app : appNames) {
+            if (app.equals("AnyDesk")) {
                 textBanner.setText("У вас установлено запрещённое приложение AnyDesk, войти не получится");
                 showBlockingBanner();
             }
         }
         binding.textApp.setAdapter(adapter);
     }
+
     private void showBlockingBanner() {
         // Получаем корневой Layout вашей активности
         RelativeLayout rootLayout = findViewById(R.id.rootLayout);
